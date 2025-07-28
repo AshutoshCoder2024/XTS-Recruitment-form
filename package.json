@@ -1,0 +1,28 @@
+{
+  "name": "xavier-techbyte-society-form",
+  "version": "1.0.0",
+  "description": "Recruitment form for Xavier's TechByte Society using Netlify Functions and SheetDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "netlify dev",
+    "build": "echo 'No dedicated build step for static assets and functions handled by Netlify build'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "netlify",
+    "netlify-functions",
+    "sheetdb",
+    "form",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Your Name/Organization Name",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}
