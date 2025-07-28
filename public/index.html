@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xavier's TechByte Society Recruitment</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="club-header">
+        <div class="club-header-text">
+            <h1 class="club-title"><img src="XTs-logo.png" alt="Xavier's TechByte Society Logo" class="club-logo">Xavier's TechByte Society</h1>
+            <div class="club-accent-bar"></div>
+            <h2 class="club-dept">Department of Computer Science</h2>
+            <h3 class="club-college">St. Xavier College Ranchi</h3>
+        </div>
+    </div>
+
+    <div class="form-card">
+        <form id="recruitForm">
+            <div class="form-group">
+                <input class="form-input" type="text" id="fullName" name="FullName" placeholder=" " required>
+                <label class="form-label" for="fullName">Full Name</label>
+            </div>
+            <div class="form-group">
+                <select class="form-select" id="department" name="Department" required>
+                    <option value="" disabled selected></option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Statistics">Statistics</option>
+                    <option value="Other">Other</option>
+                </select>
+                <label class="form-label" for="department">Department</label>
+            </div>
+            <div class="form-group" id="otherDepartmentGroup" style="display:none;">
+                <input class="form-input" type="text" id="otherDepartmentInput" name="OtherDepartment" placeholder=" ">
+                <label class="form-label" for="otherDepartmentInput">Please specify department</label>
+            </div>
+            <div class="form-group">
+                <select class="form-select" id="semester" name="Semester" required>
+                    <option value="" disabled selected></option>
+                    <option value="Sem1">Sem 1</option>
+                    <option value="Sem2">Sem 2</option>
+                    <option value="Sem3">Sem 3</option>
+                    <option value="Sem4">Sem 4</option>
+                    <option value="Sem5">Sem 5</option>
+                    <option value="Sem6">Sem 6</option>
+                    <option value="Sem7">Sem 7</option>
+                    <option value="Sem8">Sem 8</option>
+                </select>
+                <label class="form-label" for="semester">Semester</label>
+            </div>
+            <div class="form-group">
+                <input class="form-input" type="text" id="examRollNo" name="ExamRollNo" placeholder=" " required>
+                <label class="form-label" for="examRollNo">Exam Roll No.</label>
+            </div>
+            <div class="form-group">
+                <input class="form-input" type="email" id="email" name="Email" placeholder=" " required>
+                <label class="form-label" for="email">Email ID</label>
+            </div>
+            <div class="form-group">
+                <input class="form-input" type="tel" id="whatsapp" name="WhatsApp" placeholder=" " required pattern="[0-9]{10,15}" title="WhatsApp number must be 10-15 digits">
+                <label class="form-label" for="whatsapp">WhatsApp No.</label>
+            </div>
+            <div class="form-group">
+                <select class="form-select" id="preferredTeam" name="PreferredTeam" required>
+                    <option value="" disabled selected></option>
+                    <option value="Executive">Executive Team</option>
+                    <option value="Tech">Tech Team</option>
+                    <option value="PR">PR Team</option>
+                </select>
+                <label class="form-label" for="preferredTeam">Preferred Team</label>
+            </div>
+            <div class="form-group">
+                <input class="form-input" type="text" id="skills" name="Skills" placeholder=" ">
+                <label class="form-label" for="skills">Skills</label>
+            </div>
+            <div class="form-group">
+                <textarea class="form-textarea" id="personalInsight" name="PersonalInsight" placeholder=" " required maxlength="600"></textarea>
+                <label class="form-label" for="personalInsight">Personal Insight (Max 100 words)</label>
+            </div>
+            <button class="form-btn" type="submit">Submit</button>
+            <div id="formMessage" class="form-message"></div>
+        </form>
+
+        <div class="footer-socials">
+            <p class="footer-connect">Connect with us</p>
+            <div class="footer-icons-row">
+                <a href="https://instagram.com/yourclub" target="_blank" aria-label="Instagram" class="footer-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/in/yourclub" target="_blank" aria-label="LinkedIn" class="footer-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://youtube.com/yourclub" target="_blank" aria-label="YouTube" class="footer-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>  
+
+    <script src="script.js"></script>
+</body>
+</html>

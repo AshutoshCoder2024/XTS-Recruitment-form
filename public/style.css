@@ -1,0 +1,461 @@
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181c2b;
+    background: linear-gradient(135deg, #181c2b 0%, #23243a 100%);
+    background-attachment: fixed;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 80% 10%, #64b5f655 0%, transparent 60%),
+                radial-gradient(circle at 10% 90%, #1a237e33 0%, transparent 70%),
+                url('https://www.transparenttextures.com/patterns/cubes.png');
+    opacity: 0.7;
+}
+
+/* Card Glassmorphism */
+.form-card {
+    background: rgba(30,34,54,0.92);
+    border: none;
+    box-shadow: 0 8px 32px #1a237e33, 0 1.5px 8px #64b5f655;
+    border-radius: 20px;
+    max-width: 480px; /* Increased max-width for better desktop experience */
+    width: 95%; /* Added width for better responsiveness on larger screens */
+    margin: 32px auto 32px auto;
+    padding: 32px 24px 24px 24px; /* Increased padding */
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+    backdrop-filter: blur(12px) saturate(1.3);
+    -webkit-backdrop-filter: blur(12px) saturate(1.3); /* For Safari */
+}
+
+/* Heading */
+.club-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 18px 0;
+    user-select: none;
+    background: none;
+    box-shadow: none;
+    padding: 0 10px; /* Added padding for smaller screens */
+    text-align: center; /* Center text for smaller screens */
+}
+.club-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0 0 8px 0;
+    letter-spacing: 1.3px;
+    text-shadow: 0 2px 12px #64b5f6aa, 0 1px 0 #23243a;
+    line-height: 1.1;
+}
+.club-title .club-logo {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: #fff2;
+    box-shadow: 0 2px 12px #64b5f6aa;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+.club-accent-bar {
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #64b5f6 0%, #1a237e 100%);
+    margin: 0 0 12px 0;
+    box-shadow: 0 2px 8px #64b5f6aa;
+}
+.club-dept, .club-college {
+    color: #b3c6ff;
+    font-size: 1.08rem;
+    font-weight: 500;
+    margin: 0 0 2px 0;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+.club-college {
+    font-size: 0.98rem;
+    color: #90caf9;
+}
+
+/* Floating Labels */
+.form-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+.form-input, .form-select, .form-textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px 12px 8px 12px;
+    border: 1.2px solid #90caf9;
+    border-radius: 8px;
+    font-size: 1.08rem;
+    background: rgba(255,255,255,0.07);
+    color: #e3f0ff;
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+    box-shadow: 0 1px 4px #64b5f622;
+    outline: none;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+}
+.form-input[type="tel"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+.form-input::-webkit-outer-spin-button,
+.form-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+    border: 1.5px solid #64b5f6;
+    background: rgba(100,181,246,0.10);
+}
+.form-label {
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    color: #b3c6ff;
+    font-size: 1.02rem;
+    pointer-events: none;
+    background: transparent;
+    transition: 0.18s cubic-bezier(.4,0,.2,1);
+    z-index: 2;
+    padding: 0 4px;
+}
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label,
+.form-select:focus + .form-label,
+.form-select:not([value=""]) + .form-label,
+.form-textarea:focus + .form-label,
+.form-textarea:not(:placeholder-shown) + .form-label {
+    top: -11px;
+    left: 10px;
+    font-size: 0.89rem;
+    color: #64b5f6;
+    background: #23243a;
+    padding: 0 6px;
+    border-radius: 6px;
+}
+.form-textarea {
+    min-height: 70px;
+    resize: vertical;
+}
+
+/* Buttons */
+.form-btn, .form-btn-secondary {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.13rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 12px #64b5f633;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+.form-btn {
+    background: linear-gradient(90deg, #64b5f6 0%, #1a237e 100%);
+    color: #fff;
+}
+.form-btn:hover {
+    background: linear-gradient(90deg, #1a237e 0%, #64b5f6 100%);
+    transform: translateY(-2px) scale(1.02); /* Slightly less aggressive scale */
+    box-shadow: 0 4px 18px #64b5f655;
+}
+.form-btn-secondary {
+    background: #23243a;
+    color: #90caf9;
+    border: 1.5px solid #64b5f6cc;
+}
+.form-btn-secondary:hover {
+    background: #181c2b;
+    color: #fff;
+}
+
+/* Form Message Box */
+.form-message {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0; /* Hidden by default */
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+.form-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.form-message.success {
+    background-color: #28a74533; /* Green with transparency */
+    color: #28a745; /* Darker green text */
+    border: 1px solid #28a745;
+}
+.form-message.error {
+    background-color: #dc354533; /* Red with transparency */
+    color: #dc3545; /* Darker red text */
+    border: 1px solid #dc3545;
+}
+
+
+/* Footer */
+.footer-socials {
+    margin-top: 20px; /* Adjusted margin */
+    padding: 18px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(35,36,58,0.7);
+    border-radius: 12px; /* Rounded all corners for footer within card */
+    box-shadow: 0 -1px 8px #64b5f622;
+}
+.footer-socials .footer-connect {
+    margin-bottom: 10px; /* Increased margin */
+    color: #b3c6ff;
+    font-size: 1.08rem;
+}
+.footer-socials .footer-icons-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* Increased gap */
+}
+.footer-icon {
+    font-size: 1.8rem; /* Larger icons */
+    color: #90caf9;
+    transition: transform 0.2s, color 0.2s;
+}
+.footer-icon:hover {
+    color: #fff;
+    transform: scale(1.18) rotate(-6deg);
+}
+
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) { /* Tablet and smaller */
+    .form-card {
+        padding: 24px 18px 18px 18px;
+        border-radius: 18px;
+        max-width: 90%; /* More flexible width */
+    }
+    .club-title {
+        font-size: 1.8rem;
+        gap: 10px;
+    }
+    .club-title .club-logo {
+        width: 50px;
+        height: 50px;
+    }
+    .club-accent-bar {
+        width: 50px;
+        height: 3px;
+    }
+    .club-dept, .club-college {
+        font-size: 1rem;
+    }
+    .form-input, .form-select, .form-textarea {
+        font-size: 1rem;
+        padding: 14px 10px 8px 10px;
+    }
+    .form-label {
+        left: 14px;
+        top: 12px;
+        font-size: 0.95rem;
+    }
+    .form-input:focus + .form-label,
+    .form-input:not(:placeholder-shown) + .form-label,
+    .form-select:focus + .form-label,
+    .form-select:not([value=""]) + .form-label,
+    .form-textarea:focus + .form-label,
+    .form-textarea:not(:placeholder-shown) + .form-label {
+        top: -10px;
+        left: 8px;
+        font-size: 0.85rem;
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 480px) { /* Mobile */
+    .club-header {
+        padding: 0 5px;
+    }
+    .club-title {
+        flex-direction: column;
+        gap: 6px;
+        font-size: 1.5rem;
+        margin-bottom: 4px;
+    }
+    .club-title .club-logo {
+        width: 40px;
+        height: 40px;
+    }
+    .club-accent-bar {
+        width: 40px;
+        height: 2px;
+    }
+    .club-dept, .club-college {
+        font-size: 0.9rem;
+    }
+    .form-card {
+        padding: 20px 15px 15px 15px;
+        border-radius: 15px;
+        margin: 20px auto;
+    }
+    .form-input, .form-select, .form-textarea {
+        font-size: 0.9rem;
+        padding: 12px 8px 6px 8px;
+        border-radius: 6px;
+    }
+    .form-label {
+        left: 12px;
+        top: 10px;
+        font-size: 0.9rem;
+    }
+    .form-input:focus + .form-label,
+    .form-input:not(:placeholder-shown) + .form-label,
+    .form-select:focus + .form-label,
+    .form-select:not([value=""]) + .form-label,
+    .form-textarea:focus + .form-label,
+    .form-textarea:not(:placeholder-shown) + .form-label {
+        top: -9px;
+        left: 6px;
+        font-size: 0.8rem;
+        padding: 0 4px;
+    }
+    .form-btn {
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+    .footer-socials {
+        padding: 15px 0 8px 0;
+        border-radius: 10px;
+    }
+    .footer-socials .footer-connect {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    .footer-socials .footer-icons-row {
+        gap: 18px;
+    }
+    .footer-icon {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background: linear-gradient(-45deg, #181c2b, #23243a 100%);
+    }
+    .form-card {
+        background: rgba(30,34,54,0.97);
+        border: 1.5px solid #64b5f6cc;
+        box-shadow: 0 8px 32px #1a237e99, 0 1.5px 8px #64b5f655;
+    }
+    .form-input, .form-select, .form-textarea {
+        background: rgba(255,255,255,0.06);
+        color: #e3f0ff;
+        border: 1.5px solid #64b5f6cc;
+        box-shadow: 0 1px 4px #64b5f633;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+        border: 2px solid #90caf9;
+        background: rgba(100,181,246,0.10);
+    }
+    .footer-socials {
+        background: rgba(35,36,58,0.7);
+        box-shadow: 0 -1px 8px #64b5f622;
+    }
+    .footer-connect {
+        color: #90caf9;
+        text-shadow: 0 1px 8px #64b5f633;
+    }
+    .footer-socials:after { /* If you add a divider line in footer */
+        background: linear-gradient(90deg, #90caf9 0%, #3949ab 100%);
+    }
+    /* Assuming .club-footer is not used since footer is inside card */
+    /* .club-footer {
+        background: rgba(30,34,54,0.97);
+        box-shadow: 0 -2px 16px #64b5f622;
+    } */
+    .footer-icon {
+        color: #90caf9;
+    }
+    .footer-icon:hover {
+        color: #fff;
+    }
+    .club-title {
+        color: #90caf9;
+        text-shadow: 0 2px 12px #64b5f6cc, 0 1px 0 #23243a;
+    }
+    .club-accent-bar {
+        background: linear-gradient(90deg, #90caf9 0%, #3949ab 100%);
+        box-shadow: 0 2px 8px #3949ab55;
+    }
+    .club-dept {
+        color: #b3c6ff;
+        text-shadow: 0 1px 8px #3949ab33;
+    }
+    .club-college {
+        color: #90caf9;
+        text-shadow: 0 1px 8px #3949ab22;
+    }
+    select, .form-select, option {
+        color: #e3f0ff;
+        background: #23243a;
+    }
+}
+
+/* Specific styling for select dropdown options */
+select, .form-select {
+    color: #e3f0ff; /* Text color for selected option */
+    background: rgba(255,255,255,0.07); /* Background for the select box */
+}
+select option {
+    background: #23243a; /* Background for options in dropdown */
+    color: #e3f0ff; /* Text color for options */
+}
+select:focus option {
+    background: #1a237e; /* Background for focused options in dropdown */
+    color: #e3f0ff;
+}
+
+
+::placeholder {
+    color: #b3c6ff77;
+    opacity: 1;
+    font-size: 1em;
+    transition: opacity 0.2s;
+}
+.form-input:focus::placeholder,
+.form-input:not(:placeholder-shown)::placeholder,
+.form-textarea:focus::placeholder,
+.form-textarea:not(:placeholder-shown)::placeholder {
+    opacity: 0;
+}
