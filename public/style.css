@@ -76,24 +76,24 @@ body::before {
     box-shadow: 0 2px 12px #64b5f6aa;
     flex-shrink: 0; /* Prevent logo from shrinking */
 }
-.club-accent-bar {
+/* .club-accent-bar {
     width: 60px;
     height: 4px;
     border-radius: 2px;
     background: linear-gradient(90deg, #64b5f6 0%, #1a237e 100%);
     margin: 0 0 12px 0;
     box-shadow: 0 2px 8px #64b5f6aa;
-}
+} */
 .club-dept, .club-college {
     color: #b3c6ff;
-    font-size: 1.08rem;
+    font-size: 1.4rem;
     font-weight: 500;
-    margin: 0 0 2px 0;
+    margin: 0 0 3px 0;
     letter-spacing: 0.5px;
     text-align: center;
 }
 .club-college {
-    font-size: 0.98rem;
+    font-size: 1.2rem;
     color: #90caf9;
 }
 
@@ -224,8 +224,8 @@ body::before {
 
 /* Footer */
 .footer-socials {
-    margin-top: 20px; /* Adjusted margin */
-    padding: 18px 0 10px 0;
+    margin-top: 0px; /* Adjusted margin */
+    padding: 10px 0 px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -234,9 +234,9 @@ body::before {
     box-shadow: 0 -1px 8px #64b5f622;
 }
 .footer-socials .footer-connect {
-    margin-bottom: 10px; /* Increased margin */
+    margin-bottom: 5px; /* Increased margin */
     color: #b3c6ff;
-    font-size: 1.08rem;
+    font-size: 1.25rem; 
 }
 .footer-socials .footer-icons-row {
     display: flex;
@@ -246,7 +246,7 @@ body::before {
     gap: 25px; /* Increased gap */
 }
 .footer-icon {
-    font-size: 1.8rem; /* Larger icons */
+    font-size: 2.7rem; 
     color: #90caf9;
     transition: transform 0.2s, color 0.2s;
 }
@@ -261,7 +261,7 @@ body::before {
     .form-card {
         padding: 24px 18px 18px 18px;
         border-radius: 18px;
-        max-width: 90%; /* More flexible width */
+        max-width: 84%; /* More flexible width */
     }
     .club-title {
         font-size: 1.8rem;
@@ -271,10 +271,10 @@ body::before {
         width: 50px;
         height: 50px;
     }
-    .club-accent-bar {
+    /* .club-accent-bar {
         width: 50px;
         height: 3px;
-    }
+    } */
     .club-dept, .club-college {
         font-size: 1rem;
     }
@@ -315,11 +315,16 @@ body::before {
         height: 40px;
     }
     .club-accent-bar {
-        width: 40px;
+        width: 310px;
         height: 2px;
+        margin-bottom: 10px;
     }
-    .club-dept, .club-college {
-        font-size: 0.9rem;
+    .club-dept  {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    .club-college{
+        font-size: .9rem;
     }
     .form-card {
         padding: 20px 15px 15px 15px;
@@ -352,18 +357,19 @@ body::before {
         font-size: 1rem;
     }
     .footer-socials {
-        padding: 15px 0 8px 0;
+        /* padding: 15px 0 8px 0; */
         border-radius: 10px;
     }
     .footer-socials .footer-connect {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
         margin-bottom: 8px;
     }
     .footer-socials .footer-icons-row {
         gap: 18px;
     }
     .footer-icon {
-        font-size: 1.5rem;
+        gap: 20PX;
+        font-size: 2.3rem;
     }
 }
 
@@ -435,14 +441,14 @@ body::before {
 /* Specific styling for select dropdown options */
 select, .form-select {
     color: #e3f0ff; /* Text color for selected option */
-    background: rgba(255,255,255,0.07); /* Background for the select box */
+    background: rgba(255,255,255,0.07); 
 }
 select option {
-    background: #23243a; /* Background for options in dropdown */
-    color: #e3f0ff; /* Text color for options */
+    background: #23243a; 
+    color: #e3f0ff; 
 }
 select:focus option {
-    background: #1a237e; /* Background for focused options in dropdown */
+    background: #1a237e; 
     color: #e3f0ff;
 }
 
