@@ -9,7 +9,7 @@ exports.handler = async (event) => {
         };
     }
 
-    const SHEETDB_API_URL = process.env.SHEETDB_API_URL;
+    const SHEETDB_API_URL = process.env.sheetdb.io/api/v1/jqps49bea5qu3;
 
     if (!SHEETDB_API_URL) {
         console.error("SHEETDB_API_URL environment variable is not set.");
