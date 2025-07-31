@@ -28,7 +28,7 @@ exports.handler = async (event) => {
             FullName: data.FullName || "",
             Department: data.Department || "",
             Semester: data.Semester || "",
-            ExamRollNo: data.ExamRollNo || "",
+            RollNo: data.RollNo || "",
             Email: data.Email || "",
             WhatsApp: data.WhatsApp || "",
             PreferredTeam: data.PreferredTeam || "",
