@@ -34,7 +34,9 @@ exports.handler = async (event) => {
             PreferredTeam: data.PreferredTeam || "",
             Skills: data.Skills || "",
             PersonalInsight: data.PersonalInsight || "",
-            Timestamp: new Date().toISOString() // Server-side timestamp
+            // Timestamp: new Date().toISOString() // Server-side timestamp
+            Timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
+
         };
 
         // Send to SheetDB
