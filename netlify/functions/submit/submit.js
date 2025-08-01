@@ -26,6 +26,7 @@ exports.handler = async (event) => {
         // This also acts as a whitelist for data going into your sheet.
         const filtered = {
             FullName: data.FullName || "",
+            Session: data.Session || "",
             Department: data.Department || "",
             Semester: data.Semester || "",
             RollNo: data.RollNo || "",

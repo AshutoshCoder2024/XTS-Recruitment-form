@@ -5,16 +5,18 @@ document.addEventListener("DOMContentLoaded", function() {
     const otherDepartmentInput = document.getElementById("otherDepartmentInput");
     const formMessage = document.getElementById("formMessage");
     const submitBtn = recruitForm.querySelector('button[type="submit"]');
-
+    
     function showMessage(message, type) {
         formMessage.textContent = message;
         formMessage.className = `form-message show ${type}`; // Add type for styling
     }
-
+    
     function hideMessage() {
         formMessage.className = `form-message`; // Remove show and type classes
         formMessage.textContent = '';
     }
+ 
+    
 
     // Event listener for Department selection
     departmentSelect.addEventListener('change', function() {

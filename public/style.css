@@ -254,6 +254,20 @@ body::before {
     color: #fff;
     transform: scale(1.18) rotate(-6deg);
 }
+.Desiner {
+    width: full ;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #b3c6ff;
+    font-size: 1rem; 
+}
+.Desiner a {
+    color: #64b5f6;
+    text-decoration: none;
+    font-weight: bold;
+}
 
 
 /* Responsive Breakpoints */
