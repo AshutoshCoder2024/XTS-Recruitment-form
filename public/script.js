@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         formMessage.className = `form-message`; // Remove show and type classes
         formMessage.textContent = '';
     }
- 
+    
     
 
     // Event listener for Department selection
