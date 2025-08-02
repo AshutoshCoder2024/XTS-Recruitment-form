@@ -633,6 +633,7 @@ select:focus option {
     }
 }
 
+
 @media (max-width: 480px) {
     .faq-container {
         margin: 15px auto;
