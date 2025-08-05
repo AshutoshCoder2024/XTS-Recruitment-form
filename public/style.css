@@ -244,6 +244,7 @@ body::before {
     justify-content: center;
     align-items: center;
     gap: 25px; /* Increased gap */
+    margin-bottom: 15px;
 }
 .footer-icon {
     font-size: 2.7rem; 
@@ -387,6 +388,62 @@ body::before {
     }
 }
 
+
+/* Recruitment Closed Message */
+.recruitment-closed {
+    text-align: center;
+    padding: 40px 25px;
+    background: rgba(30,34,54,0.92);
+    /* border: 1.5px solid #64b5f6cc; */
+    border-radius: 20px;
+    /* box-shadow: 0 8px 32px #1a237e33, 0 1.5px 8px #64b5f655; */
+    backdrop-filter: blur(12px) saturate(1.3);
+    -webkit-backdrop-filter: blur(12px) saturate(1.3);
+    max-width: 400px;
+    width: 80%;
+    margin: 32px auto;
+}
+
+.recruitment-closed h2 {
+    color: #90caf9;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 12px #64b5f6aa;
+}
+
+.recruitment-closed p {
+    color: #b3c6ff;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.recruitment-closed .social-message {
+    color: #64b5f6;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+@media (max-width: 480px) {
+    .recruitment-closed {
+        padding: 30px 20px;
+        margin: 20px auto;
+    }
+    
+    .recruitment-closed h2 {
+        font-size: 1.6rem;
+    }
+    
+    .recruitment-closed p {
+        font-size: 1.1rem;
+    }
+    
+    .recruitment-closed .social-message {
+        font-size: 1rem;
+    }
+}
 
 /* Dark Mode Overrides */
 @media (prefers-color-scheme: dark) {
